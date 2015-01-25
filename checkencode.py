@@ -14,8 +14,6 @@ temp_dir  = []
 file_list = []
 bom_list  = []
 def _checkEncode(filename):
-    #Todo 
-    #file filename
     res = commands.getstatusoutput('file {0}'.format(filename))
     if res[0]:
         print 'sys error'
