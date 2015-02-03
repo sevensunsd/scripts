@@ -3,7 +3,7 @@
 
 '''use shell cmd file check file encode 
  print filename if encode is UTF-8 with BOM
- tested on Linux & MacOS
+ tested on Linux 
 '''
 
 import os
