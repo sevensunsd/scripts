@@ -9,6 +9,7 @@
 import os
 import sys
 import commands
+import codecs
 
 temp_dir  = []
 file_list = []
@@ -20,6 +21,13 @@ def _checkEncode(filename):
         sys.exit(1)
     print res[1]
     if 'with BOM' in res[1]:
+        bom_list.append(filename)
+
+def _checkEncode_v2(filename):
+    fd = open(filename, 'r')
+    content = fd.read()
+    fd.close()
+    if content[:3] == codecs.BOM_UTF8:
         bom_list.append(filename)
 
 def traversalDir():
